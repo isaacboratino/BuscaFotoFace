@@ -92,7 +92,7 @@ function checkLoginState()
 function templateImages(linha) 
 {
     return '<a href='+linha.link+' target=_blank>'
-    +'<img src=\"'+linha.full_picture+'\" width=500 height=500>'
+    +'<img src=\"'+linha.full_picture+'\" width=100 height=100>'
     +'<span>'+linha.description+' '+linha.message+'</span>'
     +'</a>';
 }
