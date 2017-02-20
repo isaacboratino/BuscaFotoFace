@@ -49,7 +49,7 @@
     cookie     : true,  // enable cookies to allow the server to access 
                         // the session
     xfbml      : true,  // parse social plugins on this page
-    version    : 'v2.5' // use version 2.2
+    version    : 'v2.8' // use version 2.2
   });
 
   // Now that we've initialized the JavaScript SDK, we call 
@@ -86,7 +86,7 @@
     console.log('Welcome!  Fetching your information.... ');
 
 	FB.api(
-	    "/140969332682491/feed?fields=id,name,picture",
+	    "/140969332682491/feed?fields=id,name,picture,full_picture,description,message,object_id,parent_id,type,link,timeline_visibility&limit=100",
 	    function (response) {
 	      if (response && !response.error) 
 	      {
@@ -95,7 +95,7 @@
 
 	      	for ( i = 0; i < response.data.length; i++)
 	      	{
-				teste += '<img src=\"'+response.data[i].picture+'\" width=50 height=50><span>'+response.data[i].name+'</span>'
+				teste += '<img src=\"'+response.data[i].full_picture+'\" width=500 height=500><span>'+response.data[i].description+' '+response.data[i].message+'</span>'
 	      	}
 
 	        console.log('Successful login for: ' + response.name);
