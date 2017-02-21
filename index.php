@@ -13,8 +13,13 @@
   #fotosFace > span {
     float:right;
     clear:both;
-	  width: 90%;
+	  /*width: 90%;*/
     background-color: #EFE;
+  }
+
+  #fotosFace > div {
+    float:left;
+    width: 50%;
   }
 </style>
 
@@ -72,6 +77,7 @@
   }
 
   // Ao se logar, fas a busca no facebook com a api
+  var contador = 0;
   function queryFacebookAPI(api_url) 
   {
     console.log('Bem vindo a api face! Lendo informações.... ');
@@ -85,12 +91,13 @@
 
             for ( i = 0; i < response.data.length; i++)
             {
-                fotosFace += templateImages(response.data[i]);
-            }
+                fotosFace += templateImages(response.data[i], ++contador);
+            }            
 
-            console.log('Logado com sucesso : ' + response.name);
+            document.getElementById('fotosFace').innerHTML += fotosFace;
 
-            document.getElementById('fotosFace').innerHTML = fotosFace;
+            console.log('Next: ' + response.paging.next);
+            queryFacebookAPI(response.paging.next);            
         }
       }
     );
@@ -104,12 +111,12 @@
     });
   }
 
-  function templateImages(linha) 
+  function templateImages(linha, contador) 
   {
-      return '<a href='+linha.link+' target=_blank>'
+      return '<div><a href='+linha.link+' target=_blank>'
       +'<img src=\"'+linha.full_picture+'\" width=100 height=100>'
       +'</a>'
-      +'<span>'+linha.description+' '+linha.message+'</span>';
+      +'<span>'+contador+' : '+linha.description+' '+linha.message+'</span><div>';
   }
 
   </script>
