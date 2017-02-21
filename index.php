@@ -7,10 +7,14 @@
 <style>
   #fotosFace > a {
     float:left;
+    background-color: #97B;
   }
 
   #fotosFace > span {
     float:right;
+    clear:both;
+	  width: 90%;
+    background-color: #EFE;
   }
 </style>
 
