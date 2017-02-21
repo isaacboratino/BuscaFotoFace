@@ -116,7 +116,7 @@
       return '<div><a href='+linha.link+' target=_blank>'
       +'<img src=\"'+linha.full_picture+'\" width=100 height=100>'
       +'</a>'
-      +'<span>'+contador+' : '+linha.description+' '+linha.message+'</span><div>';
+      +'<span>'+contador+' : '+linha.description+' '+linha.message+'</span></div>';
   }
 
   </script>
