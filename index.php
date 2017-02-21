@@ -5,15 +5,20 @@
   <meta charset="UTF-8">
 
 <style>
-  #fotosFace > a {
+  #fotosFace a {
     float:left;
+    width: 15%;
     background-color: #97B;
   }
 
-  #fotosFace > span {
-    float:right;
-    clear:both;
-	  /*width: 90%;*/
+  #fotosFace a {
+    width: 100%;
+    height: 100%;
+  }
+
+  #fotosFace span {
+    float:left;
+    width: 85%;
     background-color: #EFE;
   }
 
@@ -114,7 +119,7 @@
   function templateImages(linha, contador) 
   {
       return '<div><a href='+linha.link+' target=_blank>'
-      +'<img src=\"'+linha.full_picture+'\" width=100 height=100>'
+      +'<img src=\"'+linha.full_picture+'\" >'
       +'</a>'
       +'<span>'+contador+' : '+linha.description+' '+linha.message+'</span></div>';
   }
