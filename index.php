@@ -9,9 +9,12 @@
     float:left;
     width: 15%;
     background-color: #97B;
+    cwidth: 100%;
+    height: 100%;
+	  display: block;
   }
 
-  #fotosFace a {
+  #fotosFace img{
     width: 100%;
     height: 100%;
   }
@@ -25,6 +28,7 @@
   #fotosFace > div {
     float:left;
     width: 50%;
+    height: 100px;
   }
 </style>
 
