@@ -7,7 +7,7 @@
 <style>
   #fotosFace a {
     float:left;
-    width: 15%;
+    width: 25%;
     background-color: #97B;
     cwidth: 100%;
     height: 100%;
@@ -21,14 +21,14 @@
 
   #fotosFace span {
     float:left;
-    width: 85%;
+    width: 75%;
     background-color: #EFE;
   }
 
   #fotosFace > div {
     float:left;
     width: 50%;
-    height: 100px;
+    height: 150px;
   }
 </style>
 
