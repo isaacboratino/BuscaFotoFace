@@ -69,7 +69,7 @@
     if (response.status === 'connected')     
     {
       // Ao se logar no faceboock execute esta function
-      queryFacebookAPI("/140969332682491/feed?fields=id,name,picture,full_picture,description,message,object_id,parent_id,type,link,timeline_visibility&limit=100");
+      queryFacebookAPI("/140969332682491/feed?fields=id,name,picture,full_picture,message,object_id,parent_id,type,link,timeline_visibility&limit=100");
 
     } 
     else if (response.status === 'not_authorized') 
@@ -125,7 +125,7 @@
       return '<div><a href='+linha.link+' target=_blank>'
       +'<img src=\"'+linha.full_picture+'\" >'
       +'</a>'
-      +'<span>'+contador+' : '+linha.description+' '+linha.message+'</span></div>';
+      +'<span>'+contador+' : '+linha.message+'</span></div>';
   }
 
   </script>
