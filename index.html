@@ -111,7 +111,7 @@
                         montaImagensTela(arrayTodasFotos, document.getElementById('fotosFace'));
 
                         // Se ainda não leu todas as paginas
-                        if (response.paging.next !== undefined) {
+                        if (response.paging !== undefined) {
                             console.log('Next: ' + response.paging.next);
                             queryFacebookAPI(response.paging.next);
                         } else {
