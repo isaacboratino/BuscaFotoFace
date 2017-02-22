@@ -1,0 +1,22 @@
+{
+    "name": "buscafotoface",
+    "homepage": "https://github.com/isaacboratino/BuscaFotoFacePHP",
+    "authors": [
+        "isaacboratino <isaacboratino@gmail.com>"
+    ],
+    "description": "ferramenta auxiliadora que ajuda a buscar fotos de uma page no face",
+    "main": "index.html",
+    "license": "MIT",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "assets",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "jquery": "latest"
+    }
+}
