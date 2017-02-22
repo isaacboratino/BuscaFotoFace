@@ -41,6 +41,16 @@
 </head>
 
 <body>
+    <h1>Hello, world!</h1>
+
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button>
+
+    <div class="row" id="fotosFace">
+    </div>
+
+    <script src="assets/components/jquery/dist/jquery.min.js" />
+    <script src="assets/components/bootstrap/dist/js/bootstrap.min.js" />
     <script>
         // Faz load do SDK do facebook de forma sincona
         (function(d, s, id) {
@@ -119,22 +129,14 @@
         }
 
         function templateImages(linha, contador) {
-            return '<div><a href=' + linha.link + ' target=_blank>' +
-                '<img src=\"' + linha.full_picture + '\" >' +
-                '</a>' +
-                '<span>' + contador + ' : ' + linha.message + '</span></div>';
+            return '<div class="col-md-1">' +
+                '  <a href=' + linha.link + ' target=_blank>' +
+                '    <img src=\"' + linha.full_picture + '\" >' +
+                '  </a>' +
+                '</div>';
+            /*+'  <span>' + contador + ' : ' + linha.message + '</span>'*/
         }
     </script>
-    <script src="assets/components/jquery/dist/jquery.min.js" />
-    <script src="assets/components/bootstrap/dist/js/bootstrap.min.js" />
-
-    <h1>Hello, world!</h1>
-
-    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-    </fb:login-button>
-
-    <div id="fotosFace">
-    </div>
 
 </body>
 
