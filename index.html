@@ -152,8 +152,8 @@
         }
 
         function criarDropdownSelecaoFotos() {
-            $.inArray("urso", arrayTodasFotos);
-            var arrayFotosSelecionadas = $.grep(arrayTodasFotos, function(obj) {
+            jQuery.inArray("urso", arrayTodasFotos);
+            var arrayFotosSelecionadas = jQuery.grep(arrayTodasFotos, function(obj) {
                 return obj.message.indexOf("urso");
             });
             montaImagensTela(arrayFotosSelecionadas, divIncremental)
