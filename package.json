@@ -1,11 +1,12 @@
 {
-    "name": "buscafotoface",
-    "version": "1.0.0",
-    "dependencies": {
-        "grunt-contrib-concat": "0.5.1",
-        "grunt-contrib-copy": "0.8.2",
-        "grunt-minified": "0.0.6",
-        "grunt-contrib-compress": "1.0.0",
-        "prerender-node": "2.2.0"
-    }
+  "name": "buscafotoface",
+  "version": "1.0.0",
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-bower": "^0.21.4",
+    "grunt-contrib-copy": "0.8.2"
+  },
+  "devDependencies": {
+    "grunt-contrib-copy": "^0.8.2"
+  }
 }
