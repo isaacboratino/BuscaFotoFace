@@ -42,14 +42,6 @@
 <body>
     <h1>Hello, world!</h1>
 
-    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-    </fb:login-button>
-
-    <div class="row" id="fotosFace">
-    </div>
-
-    <script src="assets/frameworks/jquery/dist/jquery.min.js" />
-    <script src="assets/frameworks/bootstrap/dist/js/bootstrap.min.js" />
     <script>
         // Faz load do SDK do facebook de forma sincona
         (function(d, s, id) {
@@ -136,6 +128,15 @@
             /*+'  <span>' + contador + ' : ' + linha.message + '</span>'*/
         }
     </script>
+
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button>
+
+    <div class="row" id="fotosFace">
+    </div>
+
+    <script src="assets/frameworks/jquery/dist/jquery.min.js" />
+    <script src="assets/frameworks/bootstrap/dist/js/bootstrap.min.js" />
 
 </body>
 
