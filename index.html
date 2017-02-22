@@ -10,6 +10,14 @@
     <link rel="stylesheet" type="text/css" href="assets/frameworks/bootstrap/dist/css/bootstrap-theme.min.css">
 
     <style>
+        html {
+            background-color: #FFCCE7;
+        }
+        
+        body {
+            background-color: none;
+            padding: 10px;
+        }
         /*#fotosFace a {
             float: left;
             width: 25%;
@@ -43,6 +51,8 @@
     <h1>Hello, world!</h1>
 
     <script>
+        var arrayTodasFotos = new Array;
+
         // Faz load do SDK do facebook de forma sincona
         (function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
@@ -97,16 +107,18 @@
                 function(response) {
                     if (response && !response.error) {
 
-                        var fotosFace = '';
+                        arrayTodasFotos = response.data;
+                        montaImagensTela(arrayTodasFotos, document.getElementById('fotosFace'));
 
-                        for (i = 0; i < response.data.length; i++) {
-                            fotosFace += templateImages(response.data[i], ++contador);
+                        // Se ainda não leu todas as paginas
+                        if (response.paging.next !== undefined) {
+                            console.log('Next: ' + response.paging.next);
+                            queryFacebookAPI(response.paging.next);
+                        } else {
+                            // se leu todas as paginas
+                            criarDropdownSelecaoFotos();
                         }
 
-                        document.getElementById('fotosFace').innerHTML += fotosFace;
-
-                        console.log('Next: ' + response.paging.next);
-                        queryFacebookAPI(response.paging.next);
                     }
                 }
             );
@@ -119,6 +131,16 @@
             });
         }
 
+        function montaImagensTela(arrayObjetos, divIncremental) {
+            var fotosFace = '';
+
+            for (i = 0; i < arrayObjetos.length; i++) {
+                fotosFace += templateImages(arrayObjetos[i], ++contador);
+            }
+
+            document.getElementById('fotosFace').innerHTML = divIncremental.innerHTML + fotosFace;
+        }
+
         function templateImages(linha, contador) {
             return '<div class="col-xs-6 col-md-3">' +
                 '  <a href=' + linha.link + ' target=_blank class=thumbnail>' +
@@ -127,6 +149,14 @@
                 '  </a>' +
                 '</div>';
             /*+'  <span>' + contador + ' : ' + linha.message + '</span>'*/
+        }
+
+        function criarDropdownSelecaoFotos() {
+            $.inArray("urso", arrayTodasFotos);
+            var arrayFotosSelecionadas = $.grep(arrayTodasFotos, function(obj) {
+                return obj.message.indexOf("urso");
+            });
+            montaImagensTela(arrayFotosSelecionadas, divIncremental)
         }
     </script>
 
