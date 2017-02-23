@@ -126,7 +126,7 @@ function criarCategoriasFotos() {
                     }
 
                     if (!encontrouCategoriaSimilar) {
-                        if (arrayTodasFotos[i].message != '')
+                        if (arrayTextoSeparado[j].message != '')
                             arrayCategorias.push(arrayTextoSeparado[j]);
                     }
 
@@ -135,6 +135,13 @@ function criarCategoriasFotos() {
             }
         }
     }
+
+    // Adicionar categorias a tela
+    var categoriaHtml = '';
+    for (i = 0; i < arrayCategorias.length; i++) {
+        categoriaHtml += '<li role="presentation"><a role="menuitem" tabindex="-1" href="#">' + arrayCategorias[i] + '</a></li>';
+    }
+    document.getElementById('categoriaContainer').innerHTML = categoriaHtml;
 }
 
 function buscarFotosPorCategoria() {
