@@ -9,13 +9,6 @@
     <link rel="stylesheet" type="text/css" href="assets/frameworks/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/frameworks/bootstrap/dist/css/bootstrap-theme.min.css">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
     <style>
         html {
             background-color: #FFCCE7;
@@ -56,9 +49,6 @@
 
 <body>
     <h1>Buscador Fotos Sabor de Lembrança</h1>
-
-    <script src="assets/frameworks/jquery/dist/jquery.min.js" />
-    <script src="assets/frameworks/bootstrap/dist/js/bootstrap.min.js" />
 
     <script>
         var arrayTodasFotos = new Array;
@@ -170,13 +160,14 @@
         }
     </script>
 
+    <script src="assets/frameworks/jquery/dist/jquery.min.js" />
+    <script src="assets/frameworks/bootstrap/dist/js/bootstrap.min.js" />
+
     <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
     </fb:login-button>
 
     <div class="row" id="fotosFace">
     </div>
-
-
 
 </body>
 
