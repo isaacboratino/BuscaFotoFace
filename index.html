@@ -53,8 +53,8 @@
     <div id="fotosFace" class="row">
     </div>
 
-    <script src="assets/frameworks/jquery/dist/jquery.min.js" />
-    <script src="assets/frameworks/bootstrap/dist/js/bootstrap.min.js" />
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button>
 
     <script>
         var arrayTodasFotos = new Array;
@@ -166,8 +166,8 @@
         }
     </script>
 
-    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-    </fb:login-button>
+    <script src="assets/frameworks/jquery/dist/jquery.min.js" />
+    <script src="assets/frameworks/bootstrap/dist/js/bootstrap.min.js" />
 
 </body>
 
