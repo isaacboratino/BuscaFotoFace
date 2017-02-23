@@ -158,15 +158,16 @@
         }
 
         function criarDropdownSelecaoFotos() {
-            jQuery.inArray("urso", arrayTodasFotos);
-            var arrayFotosSelecionadas = jQuery.grep(arrayTodasFotos, function(obj) {
-                return obj.message.indexOf("urso");
+
+            arrayFotosSelecionadas = arrayTodasFotos.filter(function(d) {
+                var message = '' + d.message;
+                return message != -1;
             });
+
             montaImagensTela(arrayFotosSelecionadas, '');
         }
     </script>
 
-    <script src="assets/frameworks/jquery/dist/jquery.min.js" />
     <script src="assets/frameworks/bootstrap/dist/js/bootstrap.min.js" />
 
 </body>
