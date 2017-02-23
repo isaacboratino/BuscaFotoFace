@@ -101,11 +101,11 @@ function templateImages(linha) {
 
 function criarCategoriasFotos() {
 
-    for (i = 0; i < arrayObjetos.length; i++) {
+    for (i = 0; i < arrayTodasFotos.length; i++) {
 
-        if (arrayObjetos[i].message != 'undefined' && arrayObjetos[i].message != '') {
+        if (arrayTodasFotos[i].message != 'undefined' && arrayTodasFotos[i].message != '') {
 
-            var arrayTextoSeparado = arrayObjetos[i].message.split('#');
+            var arrayTextoSeparado = arrayTodasFotos[i].message.split('#');
 
             // se encontrou pelo menos uma categoria
             if (arrayTextoSeparado.length > 2) {
