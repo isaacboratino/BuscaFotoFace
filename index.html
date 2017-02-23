@@ -18,23 +18,11 @@
 
         <h1>Buscador Fotos Sabor de Lembrança</h1>
 
-        <div class="">
-            <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdown-categoria" data-toggle="dropdown">
-                    Escolha uma categoria :)
-                    <span class="caret"></span>            
-                </button>
-                <ul id="categoriaContainer" class="dropdown-menu" role="menu" aria-labelledby="dropdown-categoria">
+        <select id="categoriaContainer" class="form-control"></select>
 
-                </ul>
-            </div>
-        </div>
+        <div id="fotosFace" class="row"></div>
 
-        <div id="fotosFace" class="row">
-        </div>
-
-        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-        </fb:login-button>
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
 
         <script src="assets/appjs/appBusca.js"></script>
         <script src="assets/frameworks/jquery/dist/jquery.min.js"></script>

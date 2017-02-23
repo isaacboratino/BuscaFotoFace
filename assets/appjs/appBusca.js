@@ -137,9 +137,9 @@ function criarCategoriasFotos() {
     }
 
     // Adicionar categorias a tela
-    var categoriaHtml = '';
+    var categoriaHtml = '<option>Escolha uma categoria :)</option>';
     for (i = 0; i < arrayCategorias.length; i++) {
-        categoriaHtml += '<li role="presentation"><a role="menuitem" tabindex="-1" href="#">' + arrayCategorias[i] + '</a></li>';
+        categoriaHtml += '<option>' + arrayCategorias[i] + '</option>';
     }
     document.getElementById('categoriaContainer').innerHTML = categoriaHtml;
 }
@@ -148,7 +148,7 @@ function buscarFotosPorCategoria() {
     //
     arrayFotosSelecionadas = arrayTodasFotos.filter(function(obj) {
         var message = '' + obj.message;
-        return message.indexOf('urso') != -1;
+        return message.indexOf(document.getElementById('categoriaContainer').value) != -1;
     });
 
     montaImagensTela(arrayFotosSelecionadas, '');
