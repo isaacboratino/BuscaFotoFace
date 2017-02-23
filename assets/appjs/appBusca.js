@@ -56,7 +56,7 @@ function queryFacebookAPI(api_url) {
         function(response) {
             if (response && !response.error) {
 
-                arrayTodasFotos = response.data;
+                arrayTodasFotos.concat(response.data);
                 montaImagensTela(arrayTodasFotos, document.getElementById(containerFotos).innerHTML);
 
                 // Se ainda não leu todas as paginas
