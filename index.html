@@ -18,7 +18,9 @@
 
         <h1>Buscador Fotos Sabor de Lembrança</h1>
 
-        <select id="categoriaContainer" class="form-control" onselect="buscarFotosPorCategoria()"></select>
+        <select id="categoriaContainer" class="form-control" onchange="buscarFotosPorCategoria()">
+            <option>Carregando...</option>
+        </select>
 
         <div id="fotosFace" class="row"></div>
 
