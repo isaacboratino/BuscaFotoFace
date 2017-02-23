@@ -105,7 +105,7 @@ function criarCategoriasFotos() {
 
         if (arrayTodasFotos[i].message != 'undefined' && arrayTodasFotos[i].message != '') {
 
-            var message = arrayTodasFotos[i].message;
+            var message = '' + arrayTodasFotos[i].message;
             var arrayTextoSeparado = message.toString().split('#sabordelembranca');
 
             // se encontrou pelo menos uma categoria
