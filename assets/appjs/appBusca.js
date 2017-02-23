@@ -46,7 +46,6 @@ function statusChangeCallback(response) {
 }
 
 // Ao se logar, fas a busca no facebook com a api
-var contador = 0;
 
 function queryFacebookAPI(api_url) {
     console.log('Bem vindo a api face! Lendo informações.... ');
@@ -83,20 +82,19 @@ function montaImagensTela(arrayObjetos, divIncremental) {
     var fotosFace = '';
 
     for (i = 0; i < arrayObjetos.length; i++) {
-        fotosFace += templateImages(arrayObjetos[i], ++contador);
+        fotosFace += templateImages(arrayObjetos[i]);
     }
 
     document.getElementById('fotosFace').innerHTML = divIncremental + fotosFace;
 }
 
-function templateImages(linha, contador) {
+function templateImages(linha) {
     return '<div class="col-xs-6 col-md-3">' +
         '  <a href=' + linha.link + ' target=_blank class=thumbnail>' +
         '    <img src=\"' + linha.full_picture + '\" ' +
         '         style="height: 200px; width: 100%; display: block;" >' +
         '  </a>' +
         '</div>';
-    /*+'  <span>' + contador + ' : ' + linha.message + '</span>'*/
 }
 
 function criarCategoriasFotos() {
