@@ -137,7 +137,11 @@ function criarCategoriasFotos() {
     }
 
     // Adicionar categorias a tela
-    var categoriaHtml = '<option>Escolha uma categoria :)</option>';
+    var categoriaHtml = '<option>Escolha uma categoria :)</option>' +
+        '<option value="">Exibir Todos</option>';
+
+    arrayCategorias = arrayCategorias.sort();
+
     for (i = 0; i < arrayCategorias.length; i++) {
         categoriaHtml += '<option>' + arrayCategorias[i] + '</option>';
     }

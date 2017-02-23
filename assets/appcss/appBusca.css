@@ -13,3 +13,7 @@ h1 {
 #fotosFace {
     margin-top: 10px;
 }
+
+#categoriaContainer {
+    text-transform: capitalize;
+}
