@@ -50,6 +50,15 @@
 <body>
     <h1>Buscador Fotos Sabor de Lembrança</h1>
 
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button>
+
+    <div id="fotosFace" class="row">
+    </div>
+
+    <script src="assets/frameworks/jquery/dist/jquery.min.js" />
+    <script src="assets/frameworks/bootstrap/dist/js/bootstrap.min.js" />
+
     <script>
         var arrayTodasFotos = new Array;
 
@@ -159,15 +168,6 @@
             montaImagensTela(arrayFotosSelecionadas, '');
         }
     </script>
-
-    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-    </fb:login-button>
-
-    <div id="fotosFace" class="row">
-    </div>
-
-    <script src="assets/frameworks/jquery/dist/jquery.min.js" />
-    <script src="assets/frameworks/bootstrap/dist/js/bootstrap.min.js" />
 
 </body>
 
