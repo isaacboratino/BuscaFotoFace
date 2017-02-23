@@ -108,7 +108,7 @@
                     if (response && !response.error) {
 
                         arrayTodasFotos = response.data;
-                        montaImagensTela(arrayTodasFotos, document.getElementById('fotosFace'));
+                        montaImagensTela(arrayTodasFotos, document.getElementById('fotosFace').innerHTML);
 
                         // Se ainda não leu todas as paginas
                         if (response.data.length == 0) {
@@ -138,7 +138,7 @@
                 fotosFace += templateImages(arrayObjetos[i], ++contador);
             }
 
-            document.getElementById('fotosFace').innerHTML = divIncremental.innerHTML + fotosFace;
+            document.getElementById('fotosFace').innerHTML = divIncremental + fotosFace;
         }
 
         function templateImages(linha, contador) {
@@ -156,7 +156,7 @@
             var arrayFotosSelecionadas = jQuery.grep(arrayTodasFotos, function(obj) {
                 return obj.message.indexOf("urso");
             });
-            montaImagensTela(arrayFotosSelecionadas, divIncremental)
+            montaImagensTela(arrayFotosSelecionadas, '');
         }
     </script>
 
