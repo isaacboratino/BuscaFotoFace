@@ -64,7 +64,7 @@ function queryFacebookAPI(api_url) {
                     queryFacebookAPI(response.paging.next);
                 } else {
                     // se leu todas as paginas
-                    criarDropdownSelecaoFotos();
+                    criarCategoriasFotos();
                 }
 
             }
@@ -99,7 +99,41 @@ function templateImages(linha, contador) {
     /*+'  <span>' + contador + ' : ' + linha.message + '</span>'*/
 }
 
-function criarDropdownSelecaoFotos() {
+function criarCategoriasFotos() {
+
+    for (i = 0; i < arrayObjetos.length; i++) {
+
+        if (arrayObjetos[i].message != 'undefined' && arrayObjetos[i].message != '') {
+
+            var arrayTextoSeparado = arrayObjetos[i].message.split('#');
+
+            // se encontrou pelo menos uma categoria
+            if (arrayTextoSeparado.length > 2) {
+
+                for (j = 2; j < arrayTextoSeparado.length; j++) {
+
+                    var encontrouCategoriaSimilar = false;
+
+                    for (k = 0; k < arrayCategorias.length; k++) {
+
+                        if (arrayTextoSeparado[j] == arrayCategorias[k]) {
+                            encontrouCategoriaSimilar = true;
+                            break;
+                        }
+                    }
+
+                    if (!encontrouCategoriaSimilar) {
+                        arrayCategorias.push(arrayTextoSeparado[j]);
+                    }
+
+                }
+
+            }
+        }
+    }
+}
+
+function buscarFotosPorCategoria() {
     //
     arrayFotosSelecionadas = arrayTodasFotos.filter(function(d) {
         var message = '' + d.message;
