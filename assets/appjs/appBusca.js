@@ -105,12 +105,12 @@ function criarCategoriasFotos() {
 
         if (arrayTodasFotos[i].message != 'undefined' && arrayTodasFotos[i].message != '') {
 
-            var arrayTextoSeparado = arrayTodasFotos[i].message.split('#sabordelembranca');
+            var arrayTextoSeparado = arrayTodasFotos[i].message.toString().split('#sabordelembranca');
 
             // se encontrou pelo menos uma categoria
             if (arrayTextoSeparado.length > 1) {
 
-                arrayTextoSeparado = arrayTextoSeparado[1].split('#');
+                arrayTextoSeparado = arrayTextoSeparado[1].replace(/ /g, '').toString().split('#');
 
                 for (j = 0; j < arrayTextoSeparado.length; j++) {
 
