@@ -105,7 +105,8 @@ function criarCategoriasFotos() {
 
         if (arrayTodasFotos[i].message != 'undefined' && arrayTodasFotos[i].message != '') {
 
-            var arrayTextoSeparado = arrayTodasFotos[i].message.toString().split('#sabordelembranca');
+            var message = arrayTodasFotos[i].message;
+            var arrayTextoSeparado = message.toString().split('#sabordelembranca');
 
             // se encontrou pelo menos uma categoria
             if (arrayTextoSeparado.length > 1) {
@@ -137,8 +138,8 @@ function criarCategoriasFotos() {
 
 function buscarFotosPorCategoria() {
     //
-    arrayFotosSelecionadas = arrayTodasFotos.filter(function(d) {
-        var message = '' + d.message;
+    arrayFotosSelecionadas = arrayTodasFotos.filter(function(obj) {
+        var message = '' + obj.message;
         return message.indexOf('urso') != -1;
     });
 
