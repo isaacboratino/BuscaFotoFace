@@ -161,7 +161,7 @@
             //
             arrayFotosSelecionadas = arrayTodasFotos.filter(function(d) {
                 var message = '' + d.message;
-                return message != -1;
+                return message.indexOf('urso') != -1;
             });
 
             montaImagensTela(arrayFotosSelecionadas, '');
