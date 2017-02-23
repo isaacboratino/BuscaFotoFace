@@ -126,7 +126,8 @@ function criarCategoriasFotos() {
                     }
 
                     if (!encontrouCategoriaSimilar) {
-                        arrayCategorias.push(arrayTextoSeparado[j]);
+                        if (arrayTodasFotos[i].message != '')
+                            arrayCategorias.push(arrayTextoSeparado[j]);
                     }
 
                 }
