@@ -60,7 +60,7 @@ function queryFacebookAPI(api_url) {
                 montaImagensTela(arrayTodasFotos, document.getElementById(containerFotos).innerHTML);
 
                 // Se ainda não leu todas as paginas
-                if (response.data.length == 0) {
+                if (response.data.length != 0) {
                     console.log('Next: ' + response.paging.next);
                     queryFacebookAPI(response.paging.next);
                 } else {
