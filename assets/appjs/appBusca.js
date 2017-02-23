@@ -1,6 +1,8 @@
 var arrayTodasFotos = new Array;
 var arrayCategorias = new Array;
 
+var containerFotos = 'fotosFace';
+
 // Faz load do SDK do facebook de forma sincona
 (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -36,11 +38,11 @@ function statusChangeCallback(response) {
         queryFacebookAPI("/140969332682491/feed?fields=id,name,picture,full_picture,message,object_id,parent_id,type,link,timeline_visibility&limit=100");
 
     } else if (response.status === 'not_authorized') {
-        document.getElementById('status').innerHTML = 'Por favor se logue nesse aplicativo.';
+        document.getElementById(containerFotos).innerHTML = 'Por favor se logue nesse aplicativo.';
         FB.login();
 
     } else {
-        document.getElementById('status').innerHTML = 'Por favor se logue no Facebook.';
+        document.getElementById(containerFotos).innerHTML = 'Por favor se logue no Facebook.';
         FB.login();
     }
 }
@@ -55,7 +57,7 @@ function queryFacebookAPI(api_url) {
             if (response && !response.error) {
 
                 arrayTodasFotos = response.data;
-                montaImagensTela(arrayTodasFotos, document.getElementById('fotosFace').innerHTML);
+                montaImagensTela(arrayTodasFotos, document.getElementById(containerFotos).innerHTML);
 
                 // Se ainda não leu todas as paginas
                 if (response.data.length == 0) {
@@ -85,7 +87,7 @@ function montaImagensTela(arrayObjetos, divIncremental) {
         fotosFace += templateImages(arrayObjetos[i]);
     }
 
-    document.getElementById('fotosFace').innerHTML = divIncremental + fotosFace;
+    document.getElementById(containerFotos).innerHTML = divIncremental + fotosFace;
 }
 
 function templateImages(linha) {
