@@ -3,6 +3,5 @@ html {
 }
 
 body {
-    background-color: none;
-    padding: 10px;
+    background-color: none !important;
 }
